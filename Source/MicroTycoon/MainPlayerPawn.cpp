@@ -25,6 +25,8 @@ AMainPlayerPawn::AMainPlayerPawn()
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
 	FollowCamera->SetupAttachment(CameraBoom);
 	FollowCamera->bUsePawnControlRotation = false;
+
+	CurrentCoins = 0;
 }
 
 // Called when the game starts or when spawned
