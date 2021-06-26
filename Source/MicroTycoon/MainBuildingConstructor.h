@@ -21,6 +21,8 @@ public:
 	int64 ProductionLimit;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Default")
 	int64 CurrentLimit;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Default")
+	float ConstructionTime;
 
 protected:
 	// Called when the game starts or when spawned
@@ -30,9 +32,14 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UFUNCTION(BlueprintCallable)
-	FORCEINLINE int64 GetCoinsCost() { return CoinsCost; }
-	FORCEINLINE int64 GetProductionLimit() { return ProductionLimit; }
-	FORCEINLINE int64 GetCurrentLimit() { return CurrentLimit; }
-	FORCEINLINE void SetCurrentLimit(int64 Limit) { CurrentLimit = Limit; }
+	UFUNCTION(BlueprintCallable) FORCEINLINE
+	int64 GetCoinsCost() { return CoinsCost; }
+	UFUNCTION(BlueprintCallable) FORCEINLINE
+	int64 GetProductionLimit() { return ProductionLimit; }
+	UFUNCTION(BlueprintCallable) FORCEINLINE
+	int64 GetCurrentLimit() { return CurrentLimit; }
+	UFUNCTION(BlueprintCallable) FORCEINLINE
+	float GetConstructionTime() { return ConstructionTime; }
+	UFUNCTION(BlueprintCallable) FORCEINLINE
+	int64 SetCurrentLimit(int64 Limit) { CurrentLimit = Limit; return CurrentLimit; }
 };

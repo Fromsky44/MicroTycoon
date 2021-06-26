@@ -12,6 +12,7 @@ AMainBuildingConstructor::AMainBuildingConstructor()
 	CoinsCost = 0;
 	ProductionLimit = 0;
 	CurrentLimit = 0;
+	ConstructionTime = 5.f;
 }
 
 // Called when the game starts or when spawned

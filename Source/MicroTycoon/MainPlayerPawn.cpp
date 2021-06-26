@@ -26,7 +26,7 @@ AMainPlayerPawn::AMainPlayerPawn()
 	FollowCamera->SetupAttachment(CameraBoom);
 	FollowCamera->bUsePawnControlRotation = false;
 
-	CurrentCoins = 0;
+	CurrentCoins = 50;
 }
 
 // Called when the game starts or when spawned

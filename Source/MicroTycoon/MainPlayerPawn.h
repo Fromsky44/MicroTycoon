@@ -48,8 +48,9 @@ public:
 	void MoveUp(float AxisValue);
 	void MoveRight(float AxisValue);
 
-	UFUNCTION(BlueprintCallable)
-	FORCEINLINE int64 GetCurrentCoins() { return CurrentCoins; }
-	FORCEINLINE void SetCurrentCoins(int64 Coins) { CurrentCoins = Coins; }
+	UFUNCTION(BlueprintCallable) FORCEINLINE
+	int64 GetCurrentCoins() { return CurrentCoins; }
+	UFUNCTION(BlueprintCallable) FORCEINLINE
+	int64 SetCurrentCoins(int64 Coins) { CurrentCoins = Coins; return CurrentCoins; }
 
 };
