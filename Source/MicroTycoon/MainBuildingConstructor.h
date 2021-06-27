@@ -23,6 +23,12 @@ public:
 	int64 CurrentLimit;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Default")
 	float ConstructionTime;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Default")
+	int64 ProductionCost;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Default")
+	float ProductionTime;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Default")
+	class AMainPlayerPawn* MainPawn;
 
 protected:
 	// Called when the game starts or when spawned

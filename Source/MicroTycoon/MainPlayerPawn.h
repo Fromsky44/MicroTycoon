@@ -30,8 +30,11 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Controller")
 	class APlayerController* MainPlayerController;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Resources")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources")
 	int64 CurrentCoins;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources")
+	bool bCanMove;
 
 protected:
 	// Called when the game starts or when spawned
@@ -52,5 +55,7 @@ public:
 	int64 GetCurrentCoins() { return CurrentCoins; }
 	UFUNCTION(BlueprintCallable) FORCEINLINE
 	int64 SetCurrentCoins(int64 Coins) { CurrentCoins = Coins; return CurrentCoins; }
+	UFUNCTION(BlueprintCallable) FORCEINLINE
+	bool SetCanMove(bool bCanCurrentlyMove) { bCanMove = bCanCurrentlyMove; return bCanMove; }
 
 };

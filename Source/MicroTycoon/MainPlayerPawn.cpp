@@ -27,6 +27,7 @@ AMainPlayerPawn::AMainPlayerPawn()
 	FollowCamera->bUsePawnControlRotation = false;
 
 	CurrentCoins = 50;
+	bCanMove = true;
 }
 
 // Called when the game starts or when spawned
@@ -95,10 +96,16 @@ FVector2D AMainPlayerPawn::GetScreenEdgeMovement()
 
 void AMainPlayerPawn::MoveUp(float AxisValue)
 {
-	AddActorWorldOffset(FVector(GetScreenEdgeMovement().Y, 0.f, 0.f));
+	if (bCanMove)
+	{
+		AddActorWorldOffset(FVector(GetScreenEdgeMovement().Y, 0.f, 0.f));
+	}
 }
 
 void AMainPlayerPawn::MoveRight(float AxisValue)
 {
-	AddActorWorldOffset(FVector(0.f, GetScreenEdgeMovement().X, 0.f));
+	if (bCanMove)
+	{
+		AddActorWorldOffset(FVector(0.f, GetScreenEdgeMovement().X, 0.f));
+	}
 }

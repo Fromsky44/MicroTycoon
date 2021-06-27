@@ -2,6 +2,8 @@
 
 
 #include "MainBuildingConstructor.h"
+#include "Kismet/GameplayStatics.h"
+#include "MainPlayerPawn.h"
 
 // Sets default values
 AMainBuildingConstructor::AMainBuildingConstructor()
@@ -13,19 +15,21 @@ AMainBuildingConstructor::AMainBuildingConstructor()
 	ProductionLimit = 0;
 	CurrentLimit = 0;
 	ConstructionTime = 5.f;
+	ProductionCost = 0;
+	ProductionTime = 2.f;
 }
 
 // Called when the game starts or when spawned
 void AMainBuildingConstructor::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	MainPawn = Cast<AMainPlayerPawn>(UGameplayStatics::GetPlayerPawn(GetWorld(), 0));
 }
 
 // Called every frame
 void AMainBuildingConstructor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
